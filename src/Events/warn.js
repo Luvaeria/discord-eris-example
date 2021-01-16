@@ -1,19 +1,19 @@
 'use strict';
 
-import Eris from 'eris';
 import Event from './../Structures/Event.js';
+import util from 'util';
 
 /**
  * @class
  * @extends Event
  */
-export default class Debug extends Event {
+export default class Warn extends Event {
     /**
      * @function constructor
      * @param {Eris.CommandClient} Client
      */
     constructor(Client) {
-        super(Client, 'debug');
+        super(Client, 'warn');
     }
 
     /**
@@ -22,6 +22,6 @@ export default class Debug extends Event {
      * @param {Number} shardID
      */
     handle(message, shardID = -1) {
-        console.log('[DEBUG]', '[SHARD ' + shardID + ']', message);
+        console.log('[WARN]', '[SHARD ' + shardID + ']', message);
     }
 }

@@ -1,15 +1,27 @@
 'use strict';
 
-const Event = require('./../Structures/Event');
+import Eris from 'eris';
+import Event from './../Structures/Event.js';
 
+/**
+ * @class
+ * @extends Event
+ */
 class Ready extends Event {
-    constructor() {
-        super('ready');
+    /**
+     * @function constructor
+     * @param {Eris.CommandClient} Client
+     */
+    constructor(Client) {
+        super(Client, 'ready');
     }
 
-    async run() {
+    /**
+     * @function handle
+     */
+    handle() {
         console.log('Ready!');
     }
 }
 
-module.exports = new Ready();
+export default Ready;

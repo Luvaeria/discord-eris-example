@@ -1,14 +1,26 @@
 'use strict';
 
-module.exports = class Event {
+import Eris from 'eris';
+import Base from './Base.js';
+
+/**
+ * @class
+ */
+export default class Event extends Base {
     /**
-     * @param {String} label
+     * @function constructor
+     * @param {Eris.CommandClient} client
+     * @param {String} name
      */
-    constructor(label) {
-        this.name = label;
+    constructor(client, name) {
+        super(client);
+        this._client.on(name, this.handle.bind(this));
     }
 
-    async run() {
-        throw ReferenceError('Event#Run must be a function.');
+    /**
+     * @function handle
+     */
+    handle() {
+        throw new ReferenceError(this.constructor.name + '#Run must be a function.');
     }
-};
+}

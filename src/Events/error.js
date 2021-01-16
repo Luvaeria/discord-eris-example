@@ -1,18 +1,27 @@
 'use strict';
 
-const Event = require('./../Structures/Event');
+import Event from './../Structures/Event.js';
+import util from 'util';
 
-class Err extends Event {
-    constructor() {
-        super('error');
+/**
+ * @class
+ * @extends Event
+ */
+export default class Err extends Event {
+    /**
+     * @function constructor
+     * @param {Eris.CommandClient} Client
+     */
+    constructor(Client) {
+        super(Client, 'error');
     }
 
     /**
+     * @function handle
      * @param {Error} error
+     * @param {Number} shardID
      */
-    async run(error) {
-        console.log('[ERROR]: ', error);
+    handle(error, shardID = -1) {
+        console.log('[ERROR]', '[SHARD ' + shardID + ']', util.inspect(error, true, 2, true));
     }
 }
-
-module.exports = new Err();
