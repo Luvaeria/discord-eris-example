@@ -12,8 +12,8 @@ export default class GuildName extends Command {
      * @param {Eris.CommandClient} Client
      */
     constructor(Client) {
-        super(Client, 'guildName', {
-            aliases: ['gn'],
+        super(Client, 'name', {
+            aliases: ['guildName'],
             caseInsensitive: true,
             guildOnly: true,
         });

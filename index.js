@@ -52,4 +52,4 @@ const commandOptions = {
 
 const Bot = new CustomClient(options, commandOptions);
 
-Bot.start().catch(Bot.error);
+Bot._start().catch(Bot.error);

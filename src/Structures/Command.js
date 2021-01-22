@@ -16,7 +16,7 @@ export default class Command extends Base {
      */
     constructor(client, label, options) {
         super(client);
-        this._client.registerCommand(label, this.generator, options);
+        this._client.registerCommand(label, this.generator.bind(this), options);
     }
 
     /**

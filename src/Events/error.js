@@ -22,6 +22,6 @@ export default class Err extends Event {
      * @param {Number} shardID
      */
     handle(error, shardID = -1) {
-        console.log('[ERROR]', '[SHARD ' + shardID + ']', util.inspect(error, true, 2, true));
+        console.log('[ERROR]', '[SHARD ' + shardID + ']', util.inspect(error, true, 0, true));
     }
 }

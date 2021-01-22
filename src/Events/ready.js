@@ -13,14 +13,14 @@ class Ready extends Event {
      * @param {Eris.CommandClient} Client
      */
     constructor(Client) {
-        super(Client, 'ready');
+        super(Client, 'ready', true);
     }
 
     /**
      * @function handle
      */
     handle() {
-        console.log('Ready!');
+        console.log('Ready! Connected as ' + this._client.user.username + '#' + this._client.user.discriminator + ' !');
     }
 }
 

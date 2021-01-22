@@ -1,7 +1,6 @@
 'use strict';
 
 import Event from './../Structures/Event.js';
-import util from 'util';
 
 /**
  * @class

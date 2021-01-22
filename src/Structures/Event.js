@@ -12,15 +12,15 @@ export default class Event extends Base {
      * @param {Eris.CommandClient} client
      * @param {String} name
      */
-    constructor(client, name) {
+    constructor(client, name, once = false) {
         super(client);
-        this._client.on(name, this.handle.bind(this));
+        once ? this._client.once(name, this.handle.bind(this)) : this._client.on(name, this.handle.bind(this));
     }
 
     /**
      * @function handle
      */
     handle() {
-        throw new ReferenceError(this.constructor.name + '#Run must be a function.');
+        throw new ReferenceError(this.constructor.name + '#Handle must be a function.');
     }
 }

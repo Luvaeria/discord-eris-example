@@ -1,7 +1,7 @@
 'use strict';
 
 import Eris from 'eris';
-import Event from './../Structures/Event.js';
+import Event from '../Structures/Event.js';
 
 /**
  * @class
